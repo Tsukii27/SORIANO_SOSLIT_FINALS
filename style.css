@@ -229,7 +229,7 @@ footer {
   }
 }
 
-/* Nav sa maliit na screen: isang linya lang, lumiliit ang letra para kasya lahat */
+
 @media (max-width: 720px) {
   nav {
     justify-content: space-evenly;
@@ -251,7 +251,6 @@ footer {
   }
 }
 
-/* Mga pills ng tula: 2x2 sa mobile */
 @media (max-width: 560px) {
   .tabs {
     display: grid;
@@ -264,7 +263,7 @@ footer {
   }
 }
 
-/* ===== Dagdag na estilo ===== */
+
 body {
   background-image: radial-gradient(rgba(139, 26, 26, 0.07) 1px, transparent 1px);
   background-size: 22px 22px;
@@ -303,7 +302,7 @@ header h1 {
   border-left: 2px solid var(--red);
 }
 
-/* Mga pamagat ng section */
+
 section > h2::after {
   content: "◆ ◆ ◆";
   width: auto;
@@ -316,7 +315,7 @@ section > h2::after {
   text-indent: 10px;
 }
 
-/* Cards */
+
 .card {
   position: relative;
   transition: transform 0.25s, box-shadow 0.25s;
@@ -349,7 +348,7 @@ section > h2::after {
   color: var(--cream);
 }
 
-/* Tula */
+
 .poem {
   animation: fade 0.5s both;
 }
@@ -368,7 +367,7 @@ section > h2::after {
   border-left: 4px solid var(--red);
 }
 
-/* Nav at progress bar */
+
 nav a.active {
   color: var(--gold);
   border-bottom-color: var(--gold);
@@ -405,7 +404,7 @@ nav a.active {
   transform: rotate(45deg) scale(1);
 }
 
-/* Scroll reveal */
+
 .reveal {
   opacity: 0;
   transform: translateY(32px);
