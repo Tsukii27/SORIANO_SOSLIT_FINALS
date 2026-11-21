@@ -229,6 +229,7 @@ footer {
   }
 }
 
+/* Nav sa maliit na screen: isang linya lang, lumiliit ang letra para kasya lahat */
 @media (max-width: 720px) {
   nav {
     justify-content: space-evenly;
@@ -247,5 +248,18 @@ footer {
     letter-spacing: 0;
     text-transform: none;
     white-space: nowrap;
+  }
+}
+
+/* Mga pills ng tula: 2x2 sa mobile */
+@media (max-width: 560px) {
+  .tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .tabs button {
+    padding: 10px 8px;
+    font-size: 14px;
   }
 }
