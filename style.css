@@ -263,3 +263,171 @@ footer {
     font-size: 14px;
   }
 }
+
+/* ===== Dagdag na estilo ===== */
+body {
+  background-image: radial-gradient(rgba(139, 26, 26, 0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Hero */
+header {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--dark);
+}
+header > * {
+  position: relative;
+  animation: rise 0.9s both;
+}
+header > :nth-child(2) { animation-delay: 0.15s; }
+header > :nth-child(3) { animation-delay: 0.3s; }
+header > :nth-child(4) { animation-delay: 0.45s; }
+header > :nth-child(5) { animation-delay: 0.6s; }
+header h1 {
+  background: linear-gradient(90deg, #f3d28a, var(--gold), #f3d28a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.photo {
+  animation: rise 0.9s both;
+  box-shadow: 0 0 32px rgba(217, 164, 65, 0.55);
+}
+.tag {
+  background: rgba(217, 164, 65, 0.1);
+  letter-spacing: 3px;
+}
+.info span {
+  padding: 4px 14px;
+  border-left: 2px solid var(--red);
+}
+
+/* Mga pamagat ng section */
+section > h2::after {
+  content: "◆ ◆ ◆";
+  width: auto;
+  height: auto;
+  background: none;
+  color: var(--gold);
+  font-size: 12px;
+  letter-spacing: 10px;
+  margin: 10px 0 30px;
+  text-indent: 10px;
+}
+
+/* Cards */
+.card {
+  position: relative;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 11px 11px 0 var(--gold);
+}
+.card::before,
+.card::after {
+  content: "◆";
+  position: absolute;
+  bottom: 8px;
+  color: var(--red);
+  font-size: 12px;
+}
+.card::before { left: 10px; }
+.card::after { right: 10px; }
+.tabs button {
+  transition: all 0.2s;
+}
+.tabs button:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--dark);
+}
+.tabs button.on:hover {
+  background: var(--red);
+  border-color: var(--red);
+  color: var(--cream);
+}
+
+/* Tula */
+.poem {
+  animation: fade 0.5s both;
+}
+.poem p {
+  animation: rise 0.6s both;
+  font-style: italic;
+}
+.poem p:nth-of-type(2) { animation-delay: 0.1s; }
+.poem p:nth-of-type(3) { animation-delay: 0.2s; }
+.poem p:nth-of-type(4) { animation-delay: 0.3s; }
+
+.story p.q {
+  font-style: italic;
+  background: linear-gradient(90deg, rgba(217, 164, 65, 0.18), transparent);
+  padding: 4px 14px;
+  border-left: 4px solid var(--red);
+}
+
+/* Nav at progress bar */
+nav a.active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0;
+  z-index: 20;
+  background: linear-gradient(90deg, var(--red), var(--gold));
+}
+.top {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  width: 46px;
+  height: 46px;
+  z-index: 10;
+  border: 2px solid var(--gold);
+  background: var(--red);
+  color: var(--cream);
+  font-size: 20px;
+  cursor: pointer;
+  transform: rotate(45deg) scale(0);
+  transition: transform 0.3s;
+}
+.top span {
+  display: block;
+  transform: rotate(-45deg);
+}
+.top.show {
+  transform: rotate(45deg) scale(1);
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s, transform 0.8s;
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
